@@ -1,0 +1,39 @@
+{
+  "array_of_hotels": [{
+    "name": "Lakewood",
+    "classification": 3,
+    "daily_rate":{
+      "Regular": {
+        "week": [110, 110, 110, 110, 110, 90, 90]
+      },
+      "Reward": {
+        "week": [80, 80, 80, 80, 80, 80, 80]
+      }
+    }
+  },
+  {
+    "name": "Bridgewood",
+    "classification": 4,
+    "daily_rate":{
+      "Regular": {
+        "week": [160, 160, 160, 160, 160, 60, 60]
+      },
+      "Reward": {
+        "week": [110, 110, 110, 110, 110, 50, 50]
+      }
+    }
+  },
+  {
+    "name": "Ridgewood",
+    "classification": 5,
+    "daily_rate":{
+      "Regular": {
+        "week": [220, 220, 220, 220, 220, 150, 150]
+      },
+      "Reward": {
+        "week": [100, 100, 100, 100, 100, 40, 40]
+      }
+    }
+  }
+]
+}
