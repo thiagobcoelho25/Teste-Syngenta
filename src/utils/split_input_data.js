@@ -8,18 +8,20 @@ split_input_data (input_data) {
 },
 
 calculate_most_cheap (type_of_client, array_of_days) { 
-  let index_most_cheap_hotel
+  let index_most_cheap_hotel = undefined
   let value_dailys = Number.MAX_VALUE
   
   if (type_of_client === "Regular") { 
     data_hotels.array_of_hotels.forEach((hotel, index) => {
-      let sum_price_days = calculate_price_days(hotel.daily_rate['Regular'].week, array_of_days)
+      let sum_price_days = this.calculate_price_days(hotel.daily_rate['Regular'].week, array_of_days)
+      
       if(value_dailys === sum_price_days){
         if(index_most_cheap_hotel !== undefined){
-          data_hotels[index_most_cheap_hotel].classification < data_hotels[index].classification
+          data_hotels.array_of_hotels[index_most_cheap_hotel].classification < data_hotels.array_of_hotels[index].classification
           index_most_cheap_hotel = index
         }
       }
+      
       if (value_dailys > sum_price_days){
         index_most_cheap_hotel = index
         value_dailys = sum_price_days
@@ -27,13 +29,15 @@ calculate_most_cheap (type_of_client, array_of_days) {
     });
   } else {
     data_hotels.array_of_hotels.forEach((hotel, index) => {
-      let sum_price_days = calculate_price_days(hotel.daily_rate['Reward'].week, array_of_days)
+      let sum_price_days = this.calculate_price_days(hotel.daily_rate['Reward'].week, array_of_days)
+      
       if(value_dailys === sum_price_days){
         if(index_most_cheap_hotel !== undefined){
-          data_hotels[index_most_cheap_hotel].classification < data_hotels[index].classification
+          data_hotels.array_of_hotels[index_most_cheap_hotel].classification < data_hotels.array_of_hotels[index].classification
           index_most_cheap_hotel = index
         }
       }
+      
       if (value_dailys > sum_price_days){
         index_most_cheap_hotel = index
         value_dailys = sum_price_days
@@ -41,16 +45,15 @@ calculate_most_cheap (type_of_client, array_of_days) {
     });
   }
 
-  console.log(index_most_cheap_hotel)
   return data_hotels.array_of_hotels[index_most_cheap_hotel].name
-}
-}
+},
 
-function calculate_price_days (hotel_daily_rate, array_of_days) { 
+calculate_price_days (hotel_daily_rate, array_of_days) { 
   let sum = 0
   for( let i = 0; i < array_of_days.length; i++){
     const date = new Date(array_of_days[i])
     sum = sum + hotel_daily_rate[date.getDay()]
   }
   return sum
+}
 }
