@@ -1,39 +1,22 @@
 {
-  "array_of_hotels": [{
+  "array_of_hotels": [
+    {
     "name": "Lakewood",
     "classification": 3,
-    "daily_rate":{
-      "Regular": {
-        "week": [90, 110, 110, 110, 110, 110, 90]
-      },
-      "Reward": {
-        "week": [80, 80, 80, 80, 80, 80, 80]
-      }
-    }
-  },
+    "regular_daily_rate": [90, 110, 110, 110, 110, 110, 90],
+    "rewards_daily_rate": [80, 80, 80, 80, 80, 80, 80]  
+    },
   {
     "name": "Bridgewood",
     "classification": 4,
-    "daily_rate":{
-      "Regular": {
-        "week": [60, 160, 160, 160, 160, 160, 60]
-      },
-      "Reward": {
-        "week": [50, 110, 110, 110, 110, 110, 50]
-      }
-    }
+    "regular_daily_rate": [60, 160, 160, 160, 160, 160, 60],
+    "rewards_daily_rate": [50, 110, 110, 110, 110, 110, 50]
   },
   {
     "name": "Ridgewood",
     "classification": 5,
-    "daily_rate":{
-      "Regular": {
-        "week": [150, 220, 220, 220, 220, 220, 150]
-      },
-      "Reward": {
-        "week": [40, 100, 100, 100, 100, 100, 40]
-      }
-    }
+    "regular_daily_rate": [150, 220, 220, 220, 220, 220, 150],
+    "rewards_daily_rate": [40, 100, 100, 100, 100, 100, 40]
   }
 ]
 }
